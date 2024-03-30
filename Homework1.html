@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework1</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      h2 {
+        color: #2853a3;
+        font-size: 34px;
+        font-weight: 300;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 48px;
+      }
+      h3 {
+        font-size: 34px;
+        font-weight: 100;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0%;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0%;
+        padding: 0%;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      li {
+        list-style: none;
+        padding: 10px 0;
+        border-radius: 10px;
+      }
+      li:hover {
+        background: rgb(231, 231, 148);
+        max-width: fit-content;
+        margin: 0% auto;
+      }
+      p {
+        font-size: 18px;
+        opacity: 70%;
+        font-family: monospace;
+      }
+      button {
+        display: block;
+        margin: 20px auto;
+        border: 1px solid #1a64d6;
+        background: #1a64d6;
+        color: #fff;
+        font-size: 16px;
+        line-height: 22px;
+        padding: 16px 24px;
+        border-radius: 30px;
+        transition: all 200ms ease;
+        box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+        cursor: pointer;
+      }
+      footer {
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🌦</h1>
+    <h2>Currently 15&deg; in London</h2>
+    <h3>10&deg; / <strong>20&deg;</strong></h3>
+    <br />
+    <ul>
+      <li>⛈ <strong> Tomorrow</strong></li>
+      <p>7&deg; / <strong>14&deg;</strong></p>
+      <br />
+      <li>🌤 <strong> Saturday</strong></li>
+      <p>12&deg; / <strong>16&deg;</strong></p>
+      <br />
+      <li>☀️ <strong>Sunday</strong></li>
+      <p>14&deg; / <strong>18&deg;</strong></p>
+      <br />
+    </ul>
+    <button class="hover">Change city</button>
+    <br />
+    <footer>Coded by Joanna Des</footer>
+    <script>
+      function cityChange() {
+        let city = prompt("Which city are you in?");
+        let temp = prompt("What is the tempurature?");
+        if (temp >= 0) {
+          let emoji = document.querySelector("h1");
+          emoji.innerHTML = "☀️";
+          let heading = document.querySelector("h2");
+          heading.innerHTML = "Currently " + temp + " in " + city;
+        } else {
+          let emoji = document.querySelector("h1");
+          emoji.innerHTML = "☃️";
+          let heading = document.querySelector("h2");
+          heading.innerHTML = "Currently " + temp + " in " + city;
+        }
+      }
+
+      let changeCity = document.querySelector("button");
+      changeCity.addEventListener("click", cityChange);
+    </script>
+  </body>
+</html>
